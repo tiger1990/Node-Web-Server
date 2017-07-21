@@ -1,0 +1,32 @@
+
+.divLeft
+{
+   background: #ffffff;
+   width: 20%;
+   height: 100%;
+    float: left;
+}
+
+.divRight
+{
+    background: #ffffff;
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+.divBottom
+{
+    background-color: mediumslateblue;
+    height: 20%;
+    width: 100%;
+    float: left;
+}
+
+html,body
+{
+    background-color: linen;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
