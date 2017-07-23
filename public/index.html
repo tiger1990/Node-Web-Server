@@ -10,11 +10,15 @@
     </head>
 
     <body>
-     <div class="divLeft"></div>
-
-     <div class="divRight"><h1>This is index html</h1></div>
-
-     <div class="divBottom"><h1>Index Us</h1>/div>
+      <div class="divLeft">
+        {{> header}}
+    </div>
+    <div class="divRight">
+        <h1>{{ capitalize welcomeMessage}}</h1>
+    </div>
+    <div class="divBottom">
+        {{> footer}}
+    </div>
 
     </body>
 </html>
