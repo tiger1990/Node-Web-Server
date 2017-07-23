@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//for heroku
+const port = process.env.PORT || 3000;
+
 var server = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -100,7 +103,23 @@ server.get('/listmovies', (request, response) => {
     });
 });
 
+
+//for heroku dynamic port
 // listen on this port
-server.listen(3000, () => {
-    console.log('server is up on port 3000');
+server.listen(port, () => {
+    console.log(`server is up on port ${port}`);
 });
+
+//generating ssh key for node server
+//ssh-keygen -t rsa -b 4096 -C 'deepakpanwar1990@gmail.com'
+//to give public key to third party server
+//id_rsa.pub   //start up ssh agent  and add this key
+//deepakpanwar@node-webserver $eval "$(ssh-agent -s)"
+//Agent pid 697
+//adding identity
+//deepakpanwar@node-webserver $ssh-add ~/.ssh/id_rsa
+//Identity added: /Users/deepakpanwar/.ssh/id_rsa (/Users/deepakpanwar/.ssh/id_rsa)
+//copy rsa pub key
+//pbcopy < ~/.ssh/id_rsa.pub
+//check connection with github
+//ssh -T git@github.com
