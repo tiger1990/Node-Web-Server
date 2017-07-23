@@ -28,15 +28,15 @@ server.use((req, res, next) => {
     next();
 });
 
-server.use((req, resp, next)=>{
+// server.use((req, resp, next)=>{
 
-     //resp.render('maintainence.hbs');
-    resp.render('maintainence.hbs',{
+//      //resp.render('maintainence.hbs');
+//     resp.render('maintainence.hbs',{
 
-        maintainTitle: 'Site under maintainence',
-        error :  'There is some technical error !'
-    });
-});
+//         maintainTitle: 'Site under maintainence',
+//         error :  'There is some technical error !'
+//     });
+// });
 
 //give path to render default page of website
 server.use(express.static(__dirname + '/public'));
@@ -104,7 +104,7 @@ server.get('/listmovies', (request, response) => {
 });
 
 
-//for heroku dynamic port
+//for heroku dynami c port
 // listen on this port
 server.listen(port, () => {
     console.log(`server is up on port ${port}`);
